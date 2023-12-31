@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>meseros app</title>
-</head>
-<body>
+{% extends "base_generic.html" %}
 
-</body>
-</html>
+{% block content %}
+
+     <p>La URL de meseros funciona!!!</p>
+
+     {% comment %} <p>Nombre de mesero: {{ data.nombre }}</p>
+     <p>Edad: {{ data.edad }}</p>
+     <p>Nacionalidad: {{ data.nacionalidad }}</p>
+     <p>DNI: {{ data.dni }}</p>{% endcomment %}
+
+    {% for meseros in data %}
+        <li>
+            <p><strong>Nombre de mesero:</strong> {{ meseros.nombre }}</p>
+            <p><strong>Edad: </strong> {{ meseros.edad }}</p>
+            <p><strong>Nacionalidad: </strong> {{ meseros.nacionalidad }}</p>
+            <p><strong>DNI:</strong> {{ meseros.dni }}</p>
+        </li>
+   {% endfor %}
+{% endblock %}

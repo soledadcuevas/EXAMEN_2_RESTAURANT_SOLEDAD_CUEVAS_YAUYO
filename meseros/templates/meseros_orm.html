@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <p>esta funcionando MESEROS_orm</p>
+    <table class="table-info">
+        <thead>
+        <tr>
+
+            {% for meseros in data %}
+                <p><strong>Nombre de mesero:</strong> {{ meseros.nombre }}</p>
+                <p><strong>Edad:</strong> {{ meseros.edad }}</p>
+                <p><strong>Nacionalidad:</strong> {{ meseros.nacionalidad }}</p>
+                <p><strong>DNI:</strong> {{ meseros.dni }}</p>
+                </tr>
+                </thead>
+            {% endfor %}
+
+    </table>
+{% endblock %}

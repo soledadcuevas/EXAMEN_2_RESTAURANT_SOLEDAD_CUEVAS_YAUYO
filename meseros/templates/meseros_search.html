@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <label for="">Búsqueda Meseros</label>
+
+    <div class="input-group">
+        <form class="d-flex" method="get" style="width: 450px">
+            <input class="form-control" placeholder="Ingrese el nombre de mesero a buscar" type="text" name="q" value="{{ query }}">
+        </form>
+    </div>
+
+
+
+{% endblock %}

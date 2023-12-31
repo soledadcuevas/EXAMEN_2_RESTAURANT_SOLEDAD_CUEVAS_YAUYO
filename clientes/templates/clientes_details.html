@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h3>Lista de clientes registrados</h3>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Acción</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for clientes in data %}
+            <tr>
+               <th scope="row">{{ forloop.counter }}</th>
+               <td><p>{{ clientes.nombre }} tiene {{ clientes.edad }} años y es de {{ clientes.procedencia }}</p></td>
+               <td>
+                   <a class="btn btn-primary" href="{% url 'clientes_edit' clientes.id %}" role="button">Editar</a>
+                   <a class="btn btn-danger" href="{% url 'clientes_delete' clientes.id %}" role="button">Eliminar</a>
+               </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+
+{% endblock %}

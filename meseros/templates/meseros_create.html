@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+     <div class="card-body">
+        <h1>Crear Meseros</h1>
+        <form method="post">
+            {%  csrf_token %}
+            {{ data.as_p }}
+
+            <a class="btn btn-primary" href="{% url 'meseros_details' %}" role="button">Cancelar</a>
+            <button class="btn btn-success" type="submit">Guardar meseros</button>
+        </form>
+    </div>
+
+
+
+{% endblock %}

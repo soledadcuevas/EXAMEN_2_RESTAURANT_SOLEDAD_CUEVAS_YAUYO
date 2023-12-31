@@ -1,18 +1,20 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-     <p>Hola, la url esta funcionando!!!</p>
+
+     <p>La URL de CLIENTES esta funcionando!!!!</p>
+     {% comment %} <p>Hola, la url esta funcionando!!!</p>
      <h1>Nombre de Cliente: {{ data.nombre }}</h1>
      <h1>Apellido: {{ data.apellido }}</h1>
-     <h1>DNI: {{ data.dni }}</h1>
+     <h1>DNI: {{ data.dni }}</h1>{% endcomment %}
 
-    <button type="button" class="btn btn-outline-primary">Primary</button>
-    <button type="button" class="btn btn-outline-secondary">Secondary</button>
-    <button type="button" class="btn btn-outline-success">Success</button>
-    <button type="button" class="btn btn-outline-danger">Danger</button>
-    <button type="button" class="btn btn-outline-warning">Warning</button>
-    <button type="button" class="btn btn-outline-info">Info</button>
-    <button type="button" class="btn btn-outline-light">Light</button>
-    <button type="button" class="btn btn-outline-dark">Dark</button>
-
+    {% for clientes in data %}
+        <li>
+            <p><strong>Nombre de cliente:</strong> {{ clientes.nombre }}</p>
+            <p><strong>Edad: </strong> {{ clientes.edad }}</p>
+            <p><strong>Apellido:</strong> {{ clientes.apellido }}</p>
+            <p><strong>DNI: </strong> {{ clientes.dni }}</p>
+            <p><strong>Procedencia: </strong> {{ clientes.procedencia }}</p>
+        </li>
+    {% endfor %}
 {% endblock %}

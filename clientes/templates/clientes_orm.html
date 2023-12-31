@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <p>esta funcionando clientes_orm</p>
+
+    {% for clientes in data %}
+        <p><strong>Nombre de cliente:</strong> {{ clientes.nombre }} </p>
+        <p><strong>Edad de cliente:</strong>{{ clientes.edad }} </p>
+        <p><strong>Apellido de cliente:</strong>{{ clientes.apellido }}</p>
+        <p><strong>DNI:</strong>{{ clientes.dni }}</p>
+        <p><strong>Nacionalidad:</strong>{{ clientes.procedencia }} </p>
+
+    {% endfor %}
+
+
+
+{% endblock %}

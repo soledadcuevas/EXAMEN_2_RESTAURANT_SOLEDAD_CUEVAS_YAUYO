@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'meseros.apps.MeserosConfig',
     'clientes.apps.ClientesConfig',
     'platos.apps.PlatosConfig',
+    'rest_framework',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [

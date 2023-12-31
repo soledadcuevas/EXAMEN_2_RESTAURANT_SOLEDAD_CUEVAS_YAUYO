@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h3>Lista de meseros registrados</h3>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Acción</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for meseros in data %}
+            <tr>
+               <th scope="row">{{ forloop.counter }}</th>
+               <td><p>{{ meseros.nombre }} tiene {{ meseros.edad }} años y es de {{ meseros.nacionalidad }}</p></td>
+               <td>
+                   <a class="btn btn-primary" href="{% url 'meseros_edit' meseros.id %}" role="button">Editar</a>
+                   <a class="btn btn-danger" href="{% url 'meseros_delete' meseros.id %}" role="button">Eliminar</a>
+               </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+
+{% endblock %}
+
